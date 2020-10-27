@@ -29,3 +29,43 @@ dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.4.2'
     testImplementation group: 'org.hamcrest', name: 'hamcrest-library', version: '2.2'
 }
+
+publishing {
+    repositories {
+        maven {
+            name = "GithubPackages"
+            url = uri("https://maven.pkg.github.com/shatteredsuite/shatteredcore")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            pom {
+                name = project.property("name")
+                description = project.property('description')
+                url = 'https://github.com/ShatteredSuite/' + project.property("name")
+                developers {
+                    developer {
+                        id = 'UberPilot'
+                        name = 'UberPilot'
+                        email = 'uberpilot99@gmail.com'
+                    }
+                }
+                withXml {
+                    def depsNode = asNode().appendNode('dependencies')
+
+                    configurations.compile.allDependencies.each {
+                        def depNode = depsNode.appendNode('dependency')
+                        depNode.appendNode('groupId', it.group)
+                        depNode.appendNode('artifactId', it.name)
+                        depNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+}
