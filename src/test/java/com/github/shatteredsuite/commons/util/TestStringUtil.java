@@ -1,8 +1,9 @@
-package com.github.shatteredsuite.commons;
+package com.github.shatteredsuite.commons.util;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.github.shatteredsuite.commons.util.StringUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

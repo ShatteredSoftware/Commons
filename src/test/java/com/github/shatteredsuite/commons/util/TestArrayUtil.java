@@ -1,5 +1,6 @@
-package com.github.shatteredsuite.commons;
+package com.github.shatteredsuite.commons.util;
 
+import com.github.shatteredsuite.commons.util.ArrayUtil;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

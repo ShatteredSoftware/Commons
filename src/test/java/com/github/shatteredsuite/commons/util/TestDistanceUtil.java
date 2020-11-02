@@ -1,10 +1,11 @@
-package com.github.shatteredsuite.commons;
+package com.github.shatteredsuite.commons.util;
 
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.Matchers.equalTo;
 
+import com.github.shatteredsuite.commons.util.DistanceUtil;
 import org.junit.jupiter.api.Test;
 
 public class TestDistanceUtil {

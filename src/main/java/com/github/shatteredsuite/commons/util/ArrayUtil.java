@@ -1,4 +1,4 @@
-package com.github.shatteredsuite.commons;
+package com.github.shatteredsuite.commons.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
